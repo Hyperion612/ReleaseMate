@@ -20,4 +20,4 @@ export interface Template {
   variables: string[];
 }
 
-export type Page = 'dashboard' | 'tracks' | 'add-track' | 'posts' | 'template' | 'deploy';
+export type Page = 'dashboard' | 'tracks' | 'add-track' | 'posts' | 'template' | 'deploy' | 'docker';

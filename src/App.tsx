@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LayoutDashboard, Music, Plus, Radio, Code, Rocket } from 'lucide-react';
+import { LayoutDashboard, Music, Plus, Radio, Code, Rocket, Container } from 'lucide-react';
 import { Page, Track, Post } from './types';
 import { mockTracks, mockPosts, defaultTemplate } from './data';
 import Dashboard from './components/Dashboard';
@@ -8,6 +8,7 @@ import AddTrack from './components/AddTrack';
 import Posts from './components/Posts';
 import TemplateEditor from './components/TemplateEditor';
 import DeployGuide from './components/DeployGuide';
+import DockerDeploy from './components/DockerDeploy';
 
 declare global {
   interface Window {
@@ -88,8 +89,8 @@ function App() {
     { id: 'tracks' as Page, icon: Music, label: 'Треки' },
     { id: 'add-track' as Page, icon: Plus, label: 'Добавить' },
     { id: 'posts' as Page, icon: Radio, label: 'Посты' },
-    { id: 'template' as Page, icon: Code, label: 'Шаблон' },
-    { id: 'deploy' as Page, icon: Rocket, label: 'Деплой' },
+    { id: 'docker' as Page, icon: Container, label: 'Docker' },
+    { id: 'deploy' as Page, icon: Rocket, label: 'Хостинг' },
   ];
 
   return (
@@ -127,6 +128,9 @@ function App() {
         )}
         {currentPage === 'deploy' && (
           <DeployGuide />
+        )}
+        {currentPage === 'docker' && (
+          <DockerDeploy />
         )}
       </main>
 
